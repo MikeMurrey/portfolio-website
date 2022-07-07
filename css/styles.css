@@ -1,0 +1,286 @@
+/*
+Colors used
+
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70;
+Secondary Color (Orange): #e0b354;
+*/
+:root {
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --visited-link: #05676e;
+  --active-link: #489c79;
+  --sun-color-1: #edc655;
+  --sun-color-2: #fcffad;
+  --sun-color-3: #f76414;
+  --default-text: 400;
+  --bold-text: 700;
+  --default-font-size: 16px;
+  --h1-font-size: 30px;
+  --h2-font-size: 24px;
+  --h3-font-size: 18px;
+  --h1-small-screen: 22px;
+  --h2-small-screen: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: var(--default-text);
+  font-size: var(--default-font-size);
+  line-height:1.6;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--bold-text);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--bold-text);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--bold-text);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  color: var(--visited-link);
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--active-link);
+}
+
+button,
+.button {
+  border: none;
+  display:inline-block;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.button__secondary {
+  background-color: var(--secondary-color);
+  color: var(--dark-grey);
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+.profile--portrait {
+  float: left;
+  height: auto;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.page-footer {
+  clear: both;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display:inline-block;
+  margin-left: 15px;
+}
+
+.about-me {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-me__table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.contact-header {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.direct-message__input {
+  text-align: center;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 400px;
+}
+
+@keyframes color-change {
+  0% {
+    fill: var(--sun-color-1);
+  }
+  50% {
+    fill: var(--sun-color-2);
+  }
+  100% {
+    fill: var(--sun-color-3);
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+/* start grid fallback */
+.grid__item {
+  display: inline-block;
+  width: 33%;
+}
+/* end grid fallback */
+
+@supports (display:grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+  }
+
+  .grid__item {
+    background-color: lightgray;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+  }
+
+  .grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  #contact-form input,
+  #contact-form textarea {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: var(--h1-small-screen);
+  }
+  h2 {
+    font-size: var(--h2-small-screen);
+  }
+}
