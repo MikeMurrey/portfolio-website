@@ -66,6 +66,10 @@ a:active {
   color: var(--active-link);
 }
 
+.link-svg {
+  text-decoration: none;
+}
+
 button,
 .button {
   border: none;

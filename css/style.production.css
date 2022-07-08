@@ -56,6 +56,10 @@ a:active {
   color: #489c79;
 }
 
+.link-svg {
+  text-decoration: none;
+}
+
 button {
   border: none;
   display:inline-block;
