@@ -32,7 +32,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: var(--default-text);
   font-size: var(--default-font-size);
-  line-height:1.6;
+  line-height: 1.6;
 }
 
 h1 {
@@ -58,7 +58,8 @@ a:visited {
   color: var(--visited-link);
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: none;
 }
 
@@ -73,7 +74,7 @@ a:active {
 button,
 .button {
   border: none;
-  display:inline-block;
+  display: inline-block;
   font-family: inherit;
   background-color: var(--primary-color);
   color: white;
@@ -146,7 +147,7 @@ button:focus,
 }
 
 .navigation-list li {
-  display:inline-block;
+  display: inline-block;
   margin-left: 15px;
 }
 
@@ -191,9 +192,11 @@ button:focus,
   0% {
     fill: var(--sun-color-1);
   }
+
   50% {
     fill: var(--sun-color-2);
   }
+
   100% {
     fill: var(--sun-color-3);
   }
@@ -207,6 +210,7 @@ button:focus,
   from {
     transform: translate(0, 50px);
   }
+
   to {
     transform: translate(200px, 50px);
   }
@@ -220,6 +224,7 @@ button:focus,
   from {
     transform: translate(446px, 48px);
   }
+
   to {
     transform: translate(100px, 48px);
   }
@@ -234,6 +239,7 @@ button:focus,
   display: inline-block;
   width: 33%;
 }
+
 /* end grid fallback */
 
 @supports (display:grid) {
@@ -261,13 +267,14 @@ button:focus,
   .grid {
     grid-template-columns: 1fr;
   }
+
   #contact-form input,
   #contact-form textarea {
     width: 100%;
   }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px){
+@media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -277,13 +284,16 @@ button:focus,
   .grid {
     grid-gap: 10px;
   }
+
   .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: var(--h1-small-screen);
   }
+
   h2 {
     font-size: var(--h2-small-screen);
   }
